@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_1/config/internal_config.dart';
+import 'package:flutter_mobile_1/pages/login.dart';
 import 'package:flutter_mobile_1/pages/profile.dart';
 import 'package:http/http.dart' as http;
 
@@ -129,6 +130,11 @@ class _ShowtripPageState extends State<ShowtripPage> {
                     builder: (context) =>
                         ProfilePage(userData: widget.userData),
                   ),
+                );
+              }else if (value == "Logout") {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) =>LoginPages()),
                 );
               }
             },
